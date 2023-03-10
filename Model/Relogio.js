@@ -1,6 +1,6 @@
 class Relogio{
-    constructor(){
-        this.time = document.getElementById('value');
+    constructor(time){
+        this.time = time;
         this.initialize();
     }
 
