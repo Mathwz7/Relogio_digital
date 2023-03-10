@@ -1,23 +1,27 @@
 class Relogio{
-    constructor(horas, minutos, segundos){
+    constructor(){
         this.time = document.getElementById('value');
-        this.horas = horas;
-        this.minutos = minutos;
-        this.segundos = segundos;
-        this.setAgora();
+        this.initialize();
     }
-  
+
+    initialize(){
+        this.setAgora();
+        setInterval(()=>{
+        this.setAgora();
+        }, 1000);
+    }
+    
     setAgora(){
-        let time = this.time
-        let horas = this.horas 
-        let minutos = this.minutos 
-        let segundos = this.segundos
-        setTimeout(()=>{
-            time.innerHTML = `
-            ${horas} : 
-            ${minutos} :
-            ${segundos}
-            `
-        }, 500);
+        let data = new Date();
+        let horas = data.getHours();
+        let minutos = data.getMinutes();
+        let segundos = data.getSeconds();
+        let time = this.time;
+
+        time.innerHTML = `
+        ${horas} : 
+        ${minutos} :
+        ${segundos}
+        `
     }
 }
