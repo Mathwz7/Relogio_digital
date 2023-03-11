@@ -17,6 +17,15 @@ class Relogio{
         let minutos = data.getMinutes();
         let segundos = data.getSeconds();
         let time = this.time;
+        if(horas < 10){
+            horas =` 0${horas}`;
+        }
+        if(minutos < 10){
+            minutos =` 0${minutos}`;
+        }
+        if(segundos < 10){
+            segundos =` 0${segundos}`;
+        }
 
         time.innerHTML = `
         ${horas} : 
